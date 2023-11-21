@@ -1,20 +1,38 @@
 import sys
-
-from functools import partial
 import win32clipboard #pip install pywin32
 
 from PyQt5 import uic  # Импортируем uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog , QDialog
 from DialogInfo import Caesar_cipher_info_diolog, Vigenere_cipher_info_diolog
 
-class MyWidget(QMainWindow):
-    def __init__(self, PlanTextLeft="", PlanTextRight="", PlanTextKey="", lang="ML", cipher="Шифр Цезаря", decrypt="Зашифровать"):
-        super().__init__()
-        uic.loadUi('message.ui', self)  # Загружаем дизайн
+from datetime import datetime
 
-        self.Encription.clicked.connect(self.run)
+import sqlite3
+
+from PyQt5.QtCore import pyqtSignal
+
+from messageUI import Ui_MainWindow
+
+class MessageWindow(QMainWindow, Ui_MainWindow):
+    switch_to_start = pyqtSignal()
+    def __init__(self,  PlanTextLeft="", PlanTextRight="", PlanTextKey="", lang="ML", cipher="Шифр Цезаря", decrypt="Зашифровать"):
+        self.db = sqlite3.connect("database/messageDataBase.db")
+        # self.db.execute(""" CREATE TABLE IF NOT EXISTS encryptionData(
+        #                     PlanTextLeft TEXT,
+        #                     PlanTextRight TEXT,
+        #                     PlanTextKey TEXT,
+        #                     lang TEXT,
+        #                     cipher TEXT,
+        #                     decrypt TEXT,
+        #                     Time TEXT   
+        #                     ) """)
+        
+        super().__init__()
+        self.setupUi(self)# Загружаем дизайн
+
+        self.Encription.clicked.connect(self.runEncription)
         self.change.clicked.connect(self.changeCryptoMode)
-        self.DownloadTxt.clicked.connect(self.DownloadText)
+        self.DownloadTxt.clicked.connect(self.downloadText)
 
         self.copyLeftPlainText.clicked.connect(self.copyTextLeftPlanText)
         self.copyRightPlainText.clicked.connect(self.copyTextRightPlanText)
@@ -31,7 +49,10 @@ class MyWidget(QMainWindow):
 
         self.InfoButton.clicked.connect(self.OpenInfo)
         
-
+        
+        # Подключаем сигнал нажатия кнопки к методу openStartWindow
+        self.BackButton.clicked.connect(self.openStartWindow)
+        
         # Наполнение инфой окно в начале
         self.plainTextEdit_Left.appendPlainText(PlanTextLeft)
         self.plainTextEdit_Left.appendPlainText(PlanTextRight)
@@ -40,8 +61,7 @@ class MyWidget(QMainWindow):
         self.Encription.setText(decrypt)
         self.code.setCurrentIndex(self.code.findText(cipher))
 
-
-    def run(self):
+    def runEncription(self):
         self.plainTextEdit_Right.clear()
         if self.code.currentText() == "Шифр Цезаря":
             if self.label_3.text() == "Сообщение:":
@@ -56,7 +76,7 @@ class MyWidget(QMainWindow):
         
         # Имя элемента совпадает с objectName в QTDesigner
 
-    # Функция для шифрования с помощью шифра Цезаря    
+    # Метод для шифрования с помощью шифра Цезаря    
     def caesar_cipher(self, message, key, language, decrypt=False):
         # если ничего не ввели в качестве ключа
         if key:
@@ -93,10 +113,18 @@ class MyWidget(QMainWindow):
             else:
                 # Если символ не находится в алфавите, оставляем его без изменений
                 encrypted_message += char
+
+        # ЗАПОЛНЯЕМ БАЗУ ДАННЫХ
+        self.SaveMessageInbd(self.plainTextEdit_Left.toPlainText(),\
+                             encrypted_message,\
+                             self.plainTextEdit_Key.toPlainText(),\
+                             language,\
+                             "Шифр Цезаря",\
+                             self.Encription.text())
         
         return encrypted_message
     
-    # Функция для шифрования с помощью шифра Виженера
+    # Метод для шифрования с помощью шифра Виженера
     def vigenere_cipher(self, message, key, language, decrypt=False):
         # Определение алфавита на основе указанного языка
         if language == "RU":
@@ -133,8 +161,17 @@ class MyWidget(QMainWindow):
                 # Если символ не находится в алфавите, оставляем его без изменений
                 result_message += char
 
+        # ЗАПОЛНЯЕМ БАЗУ ДАННЫХ
+        self.SaveMessageInbd(self.plainTextEdit_Left.toPlainText(),\
+                             result_message,\
+                             self.plainTextEdit_Key.toPlainText(),\
+                             language,\
+                             "Шифр Виженера",\
+                             self.Encription.text())
+
         return result_message
     
+    # Метод для смены зашифровки и расшифровки
     def changeCryptoMode(self):
         txt1 = self.label_3.text()
         txt2 = self.label_4.text()
@@ -146,14 +183,25 @@ class MyWidget(QMainWindow):
         else:
             self.Encription.setText("Зашифровать")
 
-    def DownloadText(self):
+    # Метод для подргузки txt файла    
+    def downloadText(self):
         fname = QFileDialog.getOpenFileName(
             self, 'Выберете файл txt', '',
             'Документ (*.txt)')[0]
-        with open(fname, encoding='utf-8') as f:
-            content = f.read()
-        self.plainTextEdit_Left.clear()
-        self.plainTextEdit_Left.appendPlainText(content)
+        if fname:
+            try:
+                with open(fname, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                self.plainTextEdit_Left.clear()
+                self.plainTextEdit_Left.appendPlainText(content)
+            except UnicodeDecodeError:
+                # Обработка ошибки декодирования
+                # Вы можете использовать другую кодировку или игнорировать некорректные символы
+                # Например, использование 'utf-8' с параметром errors='ignore'
+                with open(fname, 'r', encoding='utf-8', errors='ignore') as f:
+                    content = f.read()
+                self.plainTextEdit_Left.clear()
+                self.plainTextEdit_Left.appendPlainText(content)
             
     def send_to_clipboard(data):
         win32clipboard.OpenClipboard()
@@ -185,7 +233,7 @@ class MyWidget(QMainWindow):
             text = self.plainTextEdit_Right.toPlainText()
             
             # Сохраняем текст в файл
-            with open(file_path, 'w') as file:
+            with open(file_path, 'w', encoding='utf-8') as file:
                 file.write(text)
                 
             print("File saved successfully!")
@@ -203,7 +251,7 @@ class MyWidget(QMainWindow):
             key = self.plainTextEdit_Key.toPlainText()
             
             # Сохраняем текст в файл
-            with open(file_path, 'w') as file:
+            with open(file_path, 'w', encoding='utf-8') as file:
                 file.write(text)
                 file.write(f"\n\nКлюч для расшифровки: {key}")
                 
@@ -231,11 +279,35 @@ class MyWidget(QMainWindow):
             Ui_caesar_cipher_Info_inst.show()
             Ui_caesar_cipher_Info_inst.exec()
 
+    def SaveMessageInbd(self, PlanTextLeft, PlanTextRight, PlanTextKey, lang, cipher, decrypt):
+        cur = self.db.cursor()
+        Time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(PlanTextLeft, PlanTextRight, PlanTextKey, lang, cipher, decrypt, Time)
 
-    # send_to_clipboard(win32clipboard.CF_DIB, data)
+        cur.execute(f"INSERT INTO encryptionData VALUES('{PlanTextLeft}', '{PlanTextRight}', '{PlanTextKey}', '{lang}',\
+                    '{cipher}', '{decrypt}', '{Time}')")
+        self.db.commit()
+    
+    def openStartWindow(self):
+        self.close()  # Закрываем текущее окно
+        self.switch_to_start.emit()
+
+    def show_with_arguments(self, arguments):
+        # Используйте переданные аргументы для инициализации окна
+        print("Received arguments:", arguments)
+        
+        self.plainTextEdit_Left.setPlainText(arguments["PlanTextLeft"])
+        self.plainTextEdit_Right.setPlainText(arguments["PlanTextRight"])
+        self.plainTextEdit_Key.setPlainText(arguments["PlanTextKey"])
+        
+        self.language.setCurrentIndex(self.language.findText(arguments["lang"]))
+        self.Encription.setText(arguments["decrypt"])
+        self.code.setCurrentIndex(self.code.findText(arguments["cipher"]))
+        
+        self.show()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyWidget()
+    ex = MessageWindow()
     ex.show()
     sys.exit(app.exec_())

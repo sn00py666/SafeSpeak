@@ -42,17 +42,17 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>476</x>
-      <y>30</y>
-      <width>246</width>
-      <height>156</height>
+      <x>650</x>
+      <y>290</y>
+      <width>421</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Images/Logo_messageWindow.png</pixmap>
+     <pixmap>Images/Logo_fileWindow.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -68,37 +68,22 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Images/dlack_balk_line.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_Left">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>160</y>
-      <width>271</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-background-color: rgb(255, 255, 255);
-border-radius: 5px;</string>
+     <pixmap>C:/Users/andre/.designer/backup/Images/dlack_balk_line.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>110</y>
-      <width>311</width>
-      <height>41</height>
+      <x>140</x>
+      <y>40</y>
+      <width>291</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>MS Shell Dlg 2</family>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -110,66 +95,27 @@ border-radius: 5px;</string>
 </string>
     </property>
     <property name="text">
-     <string>Сообщение:</string>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_Right">
-    <property name="geometry">
-     <rect>
-      <x>770</x>
-      <y>160</y>
-      <width>271</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-background-color: rgb(255, 255, 255);
-border-radius: 5px;</string>
-    </property>
-    <property name="plainText">
-     <string/>
+     <string>Выберите файл</string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="plainTextEdit_Key">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>480</y>
-      <width>265</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-background-color: rgb(255, 255, 255);
-border-radius: 5px;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>770</x>
-      <y>110</y>
-      <width>301</width>
+      <x>140</x>
+      <y>180</y>
+      <width>291</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <italic>false</italic>
-      <bold>true</bold>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-</string>
-    </property>
-    <property name="text">
-     <string>Зашифрованное сообщение:</string>
+     <string notr="true">
+background-color: rgb(255, 255, 255);
+border-radius: 5px;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="BackButton">
@@ -198,11 +144,11 @@ border-radius: 5px;</string>
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="Encription">
+   <widget class="QPushButton" name="EncriptionMode">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>500</y>
+      <x>720</x>
+      <y>90</y>
       <width>311</width>
       <height>71</height>
      </rect>
@@ -219,72 +165,25 @@ border-radius: 5px;</string>
      <string notr="true">background-color: rgba(72, 199, 166, 1);
 color: white;
 border-radius: 5px;
-
-QPushButton::hover
-{
-	
-	background-color: rgb(135, 255, 71);
-}</string>
+</string>
     </property>
     <property name="text">
-     <string>Зашифровать</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="change">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>370</y>
-      <width>151</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>22</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgba(41, 72, 109, 1);
-color: white;
-border-radius: 5px;
-
-QPushButton::hover
-{
-	
-	background-color: rgb(135, 255, 71);
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Images/change.png</normaloff>Images/change.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>1000</width>
-      <height>1000</height>
-     </size>
+     <string>Шифрование</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>480</y>
-      <width>71</width>
-      <height>41</height>
+      <x>140</x>
+      <y>150</y>
+      <width>61</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>MS Shell Dlg 2</family>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -296,16 +195,16 @@ QPushButton::hover
 </string>
     </property>
     <property name="text">
-     <string>ключ:</string>
+     <string>Ключ:</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="DownloadTxt">
+   <widget class="QPushButton" name="DownloadFile">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>390</y>
-      <width>271</width>
-      <height>41</height>
+      <x>140</x>
+      <y>70</y>
+      <width>291</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -333,193 +232,14 @@ QPushButton::hover
 }</string>
     </property>
     <property name="text">
-     <string>Выбрать файл txt...                            </string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="language">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>160</y>
-      <width>91</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-#language{
-	color: rgb(33, 34, 39);
-border: 5px solid rgb(33, 34, 39);
-border-radius: 5px;
-background-color: qlineargradient(spread:pad, x1:0.085, y1:1, x2:1, y2:1, stop:0.431818 rgba(255, 255, 255, 255), stop:0.443182 rgba(72, 199, 166, 255));
-padding-left: 6px;
-}
-
-
-#language::drop-down { 
-border: Opx;
-}
-
-#language::down-arrow{
-image: url(D:/kotovshchikov/SafeSpeak/Images/arrowLang.png);
-width: 25 px;
-height: 25px;
-margin-right: 25px;
-}
-
-/* style for QComboBox after open selcet menu*/
-#language:on {
-border: 5px solid rgb(33, 34, 39);
-}
-
-#language QListView {
-	color: rgb(255, 255, 255);
-font-size: 12px;
-padding: 5px;
-background-color: rgb(41, 72, 109);
-outline: 5px;
-}</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>ML</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>RU</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>EN</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="code">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>220</y>
-      <width>231</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#code{
-	color: rgb(255, 255, 255);
-border: 5px solid rgb(33, 34, 39);
-border-radius: 5px;
-background-color: rgb(33, 34, 39);
-padding-left: 46px;
-}
-
-
-#code::drop-down { 
-border: Opx;
-}
-
-#code::down-arrow{
-image: url(D:/kotovshchikov/SafeSpeak/Images/3 lines.png);
-width: 25 px;
-height: 25px;
-margin-right: 386px;
-}
-
-/* style for QComboBox after open selcet menu*/
-#code:on {
-
-}
-
-#code QListView {
-	color: rgb(33, 34, 39);
-font-size: 12px;
-padding: 2px;
-background-color: rgb(255, 255, 255);
-outline: 5px;
-border-radius: 5px;
-border: 5px;
-border-bottom-color: rgb(33, 34, 39);
-}</string>
-    </property>
-    <property name="duplicatesEnabled">
-     <bool>false</bool>
-    </property>
-    <property name="frame">
-     <bool>false</bool>
-    </property>
-    <item>
-     <property name="text">
-      <string>Шифр Цезаря</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Шифр Вижнера</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QPushButton" name="copyLeftPlainText">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>170</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>22</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgba(41, 72, 109, 0);
-color: white;
-border-radius: 5px;
-
-QPushButton::hover
-{
-	
-	background-color: rgb(135, 255, 71);
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Images/copy.png</normaloff>Images/copy.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>25</width>
-      <height>25</height>
-     </size>
+     <string>Выбрать файл...                                </string>
     </property>
    </widget>
    <widget class="QPushButton" name="copyKey">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>480</y>
+      <x>390</x>
+      <y>180</y>
       <width>31</width>
       <height>41</height>
      </rect>
@@ -555,157 +275,6 @@ QPushButton::hover
       <width>25</width>
       <height>25</height>
      </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="copyRightPlainText">
-    <property name="geometry">
-     <rect>
-      <x>1000</x>
-      <y>160</y>
-      <width>31</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>22</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgba(41, 72, 109, 0);
-color: white;
-border-radius: 5px;
-
-QPushButton::hover
-{
-	
-	background-color: rgb(135, 255, 71);
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Images/copy.png</normaloff>Images/copy.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>25</width>
-      <height>25</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="SaveMenu">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>160</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>22</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(72, 199, 166, 1);
-color: white;
-border-radius: 5px;
-border: 5px solid rgb(33, 34, 39);
-
-QPushButton::hover
-{
-	
-	background-color: rgb(135, 255, 71);
-}
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Images/3 lines.png</normaloff>Images/3 lines.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="SaveRight">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>200</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(72, 199, 166, 1);
-color: white;
-border-radius: 5px;
-
-QPushButton::hover
-{
-	
-	background-color: rgb(135, 255, 71);
-}</string>
-    </property>
-    <property name="text">
-     <string>сохранить</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="SaveRightWichKey">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>240</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(72, 199, 166, 1);
-color: white;
-border-radius: 5px;
-
-QPushButton::hover
-{
-	
-	background-color: rgb(135, 255, 71);
-}</string>
-    </property>
-    <property name="text">
-     <string>сохранить с ключем</string>
     </property>
    </widget>
    <widget class="QPushButton" name="InfoButton">
@@ -741,7 +310,7 @@ QPushButton::hover
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>Images/InfoIcon.png</normaloff>Images/InfoIcon.png</iconset>
+      <normaloff>C:/Users/andre/.designer/backup/Images/InfoIcon.png</normaloff>C:/Users/andre/.designer/backup/Images/InfoIcon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -750,6 +319,279 @@ QPushButton::hover
      </size>
     </property>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+
+</string>
+    </property>
+    <property name="text">
+     <string>режим работы</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DecriptionMode">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>180</y>
+      <width>311</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(126, 126, 126, 1);
+color: white;
+border-radius: 5px;
+
+QPushButton::hover
+{
+	
+	background-color: rgb(135, 255, 71);
+}</string>
+    </property>
+    <property name="text">
+     <string>Расшифровка</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="EncriptionGO">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>260</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(72, 199, 166, 1);
+color: white;
+border-radius: 5px;
+
+QPushButton::hover
+{
+	
+	background-color: rgb(135, 255, 71);
+}</string>
+    </property>
+    <property name="text">
+     <string>Шифровать</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>350</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+
+</string>
+    </property>
+    <property name="text">
+     <string>Cохраните зашифрованный файл</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SaveFile">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>390</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <stylestrategy>PreferDefault</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 1);
+color: rgba(126, 126, 126, 1);
+border-radius: 5px;
+ border: 3px solid rgba(126, 126, 126, 1);
+
+QPushButton::hover
+{
+	
+	background-color: rgb(135, 255, 71);
+}</string>
+    </property>
+    <property name="text">
+     <string>Сохраните зашифрованный файл...  </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_saveKey">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>470</y>
+      <width>301</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+
+</string>
+    </property>
+    <property name="text">
+     <string>Не забудьте сохранить ключ!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="copyKey_2">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>500</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgba(41, 72, 109, 0);
+color: white;
+border-radius: 5px;
+
+QPushButton::hover
+{
+	
+	background-color: rgb(135, 255, 71);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/copy.png</normaloff>Images/copy.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="KeyDublicate">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>500</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);
+border-radius: 5px;</string>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <zorder>KeyDublicate</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>plainTextEdit_Key</zorder>
+   <zorder>BackButton</zorder>
+   <zorder>EncriptionMode</zorder>
+   <zorder>label_10</zorder>
+   <zorder>DownloadFile</zorder>
+   <zorder>copyKey</zorder>
+   <zorder>InfoButton</zorder>
+   <zorder>label_4</zorder>
+   <zorder>DecriptionMode</zorder>
+   <zorder>EncriptionGO</zorder>
+   <zorder>label_5</zorder>
+   <zorder>SaveFile</zorder>
+   <zorder>label_saveKey</zorder>
+   <zorder>copyKey_2</zorder>
   </widget>
  </widget>
  <resources/>
