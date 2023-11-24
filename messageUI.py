@@ -422,7 +422,7 @@ class Ui_MainWindow(object):
         self.language.setItemText(1, _translate("MainWindow", "RU"))
         self.language.setItemText(2, _translate("MainWindow", "EN"))
         self.code.setItemText(0, _translate("MainWindow", "Шифр Цезаря"))
-        self.code.setItemText(1, _translate("MainWindow", "Шифр Вижнера"))
+        self.code.setItemText(1, _translate("MainWindow", "Шифр Виженера"))
         self.SaveRight.setText(_translate("MainWindow", "сохранить"))
         self.SaveRightWichKey.setText(_translate("MainWindow", "сохранить с ключем"))
 

@@ -1,15 +1,11 @@
 import sys
-import win32clipboard #pip install pywin32
 
-from PyQt5 import uic  # Импортируем uic
+from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog , QDialog
 from DialogInfo import Caesar_cipher_info_diolog, Vigenere_cipher_info_diolog
 
 from datetime import datetime
-
 import sqlite3
-
-from PyQt5.QtCore import pyqtSignal
 
 from messageUI import Ui_MainWindow
 
@@ -202,12 +198,6 @@ class MessageWindow(QMainWindow, Ui_MainWindow):
                     content = f.read()
                 self.plainTextEdit_Left.clear()
                 self.plainTextEdit_Left.appendPlainText(content)
-            
-    def send_to_clipboard(data):
-        win32clipboard.OpenClipboard()
-        win32clipboard.EmptyClipboard()
-        win32clipboard.SetClipboardData(win32clipboard.CF_DIB, data)
-        win32clipboard.CloseClipboard()
 
     def copyTextLeftPlanText(self):
         clipboard = QApplication.clipboard()
