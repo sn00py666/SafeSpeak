@@ -6,7 +6,7 @@ from MessageWindow import MessageWindow
 from FilesWindow import FilesWindow
 from historyWindow import historyWindow
 
-os.system("pip install -r requirements.txt")
+# os.system("pip install -r requirements.txt")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
